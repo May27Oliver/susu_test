@@ -1,0 +1,6 @@
+.switch-tabs-wrap {
+  border-bottom: 1px solid #a5a5a5;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}

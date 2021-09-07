@@ -1,0 +1,42 @@
+.survey-wrap {
+  width: 70%;
+  margin: auto;
+}
+
+.content-words {
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.content-words h2 {
+  margin-bottom: 20px;
+}
+
+.market-survey-intro {
+  margin: 45px 0 24px 0;
+  text-align: center;
+}
+.market-survey-intro-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+.market-survey-intro-words {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.button-panel {
+  margin: 80px 0 56px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.button-submit {
+  width: 132px;
+  line-height: 45px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 50px;
+}
