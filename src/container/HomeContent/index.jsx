@@ -21,7 +21,10 @@ const HomeContent = ({ title, content }) => {
         </div>
       </div>
       <div className={cx("menu-wrap")}>
-        <div className={cx("Sourcepage", "menu-item")}>
+        <div
+          className={cx("Sourcepage", "menu-item")}
+          onClick={() => history.push("./Sourcepage")}
+        >
           <div className={cx("menu-pic")}></div>
           <div className={cx("menu-title")}>資源調查表</div>
         </div>
@@ -36,7 +39,10 @@ const HomeContent = ({ title, content }) => {
           <div className={cx("menu-pic")}></div>
           <div className={cx("menu-title")}>市場</div>
         </div>
-        <div className={cx("LeanCanvas", "menu-item")}>
+        <div
+          className={cx("LeanCanvas", "menu-item")}
+          onClick={() => history.push("./LeanCanvaspage")}
+        >
           <div className={cx("menu-pic")}></div>
           <div className={cx("menu-title")}>Lean Canvas</div>
         </div>
@@ -44,7 +50,10 @@ const HomeContent = ({ title, content }) => {
           <div className={cx("menu-pic")}></div>
           <div className={cx("menu-title")}>產品</div>
         </div>
-        <div className={cx("Marketingpage", "menu-item")}>
+        <div
+          className={cx("Marketingpage", "menu-item")}
+          onClick={() => history.push("./Marketingpage")}
+        >
           <div className={cx("menu-pic")}></div>
           <div className={cx("menu-title")}>行銷與社群</div>
         </div>
@@ -52,7 +61,10 @@ const HomeContent = ({ title, content }) => {
           <div className={cx("menu-pic")}></div>
           <div className={cx("menu-title")}>銷售</div>
         </div>
-        <div className={cx("Stockpage", "menu-item")}>
+        <div
+          className={cx("Stockpage", "menu-item")}
+          onClick={() => history.push("./Stockpage")}
+        >
           <div className={cx("menu-pic")}></div>
           <div className={cx("menu-title")}>股權結構</div>
         </div>
@@ -60,6 +72,31 @@ const HomeContent = ({ title, content }) => {
           <div className={cx("menu-pic")}></div>
           <div className={cx("menu-title")}>管理與所有權</div>
         </div>
+        <div
+          className={cx("Investorpage", "menu-item")}
+          onClick={() => history.push("./Investorpage")}
+        >
+          <div className={cx("menu-pic")}></div>
+          <div className={cx("menu-title")}>創投與投資人</div>
+        </div>
+        <div className={cx("Wealthpage", "menu-item")}>
+          <div className={cx("menu-pic")}></div>
+          <div className={cx("menu-title")}>財務規劃</div>
+        </div>
+        <div
+          className={cx("FundRaisingpage", "menu-item")}
+          onClick={() => history.push("./Fundraisingpage")}
+        >
+          <div className={cx("menu-pic")}></div>
+          <div className={cx("menu-title")}>募資輪</div>
+        </div>
+        <div className={cx("Fundpage", "menu-item")}>
+          <div className={cx("menu-pic")}></div>
+          <div className={cx("menu-title")}>募資實戰</div>
+        </div>
+      </div>
+      <div className={cx("hint-words")}>
+        欲進行創業沙盤遊戲部份，請先完成貝爾賓測試及組隊活動。
       </div>
     </div>
   );
