@@ -1,0 +1,250 @@
+.home-content-wrap {
+  width: 100%;
+}
+
+.demo-intro-col {
+  display: flex;
+  height: 118px;
+  width: 80vw;
+  border: #ccc 1px solid;
+  border-radius: 5px;
+  margin-top: 32px;
+}
+.demo-name {
+  flex: 0 0 335px;
+  background: url("../../image/demoIntro.png") no-repeat;
+  background-size: contain;
+  background-position: bottom 0px right 38px;
+  border-right: 1px solid #ccc;
+}
+.demo-name-title {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 14px;
+  padding-left: 42px;
+  line-height: 94px;
+}
+
+.demo-intro {
+  font-size: 12px;
+  padding: 31px;
+}
+
+.demo-progress-col {
+  box-sizing: border-box;
+  flex: 0 0 107px;
+  padding-right: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 進度條progressbar */
+.circular {
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+
+.inner,
+.outer,
+.circle {
+  position: absolute;
+  z-index: 6;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  /* box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2); */
+}
+.inner {
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 80px;
+  margin: -40px 0 0 -40px;
+  background-color: #fff;
+  border-radius: 100%;
+  /* box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); */
+}
+.circle {
+  z-index: 1;
+  box-shadow: none;
+}
+.numb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  font-size: 18px;
+  font-weight: 500;
+  color: #111;
+}
+.numb-title {
+  font-size: 12px;
+}
+.bar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  -webkit-border-radius: 100%;
+  clip: rect(0px, 100px, 100px, 50px);
+}
+.progress {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-border-radius: 100%;
+  clip: rect(0px, 50px, 100px, 0px);
+}
+.progress,
+.dot span,
+.zero-dot span {
+  background: #ffdc35;
+}
+.left.progress {
+  z-index: 1;
+  animation: left 4s linear both;
+}
+@keyframes left {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.bar.right {
+  z-index: 3;
+  transform: rotate(180deg);
+}
+.right.progress {
+  animation: right 4s linear both;
+  animation-delay: 4s;
+}
+@keyframes right {
+  100% {
+    transform: rotate(135deg);
+  }
+}
+
+.dot {
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 10px;
+  margin-top: -5px;
+  animation: dot 8s linear both;
+  transform-origin: 0% 50%;
+}
+.zero-dot {
+  z-index: 100;
+  position: absolute;
+  top: 5px;
+  left: 55%;
+  height: 10px;
+  margin-top: -5px;
+  transform-origin: 0% 50%;
+}
+.zero-dot span,
+.dot span {
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+
+@keyframes dot {
+  0% {
+    transform: rotate(-90deg);
+  }
+  50% {
+    transform: rotate(90deg);
+    z-index: 4;
+  }
+  100% {
+    transform: rotate(225deg);
+    z-index: 4;
+  }
+}
+
+/* Menu */
+.menu-wrap {
+  margin-top: 23px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu-item {
+  flex: 0 0 14.24vw;
+  height: 17.1vw;
+  border: 1px #ccc solid;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  margin: 0 13px 31px 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.menu-item:active {
+  border: 1px solid rgb(57, 9, 189);
+}
+
+.menu-pic {
+  flex: 0 0 80%;
+}
+
+.menu-title {
+  line-height: 40px;
+}
+
+.Sourcepage .menu-pic {
+  background: url("../../image/demoItem1.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.Competitorpage .menu-pic {
+  background: url("../../image/demoItem2.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.Marketpage .menu-pic {
+  background: url("../../image/demoItem3.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.LeanCanvas .menu-pic {
+  background: url("../../image/demoItem4.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.Productpage .menu-pic {
+  background: url("../../image/demoItem5.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.Marketingpage .menu-pic {
+  background: url("../../image/demoItem6.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.Salespage .menu-pic {
+  background: url("../../image/demoItem7.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.Stockpage .menu-pic {
+  background: url("../../image/demoItem8.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.Managepage .menu-pic {
+  background: url("../../image/demoItem9.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+}

@@ -53,7 +53,7 @@ const MarketSurveyArea = (props) => {
       <div className={cx("button-panel")}>
         <div
           className={cx("button-submit")}
-          onClick={() => history.push("/market-2")}
+          onClick={() => history.push("/Marketpage/market-2")}
         >
           確認提交
         </div>

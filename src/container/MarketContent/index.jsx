@@ -16,9 +16,16 @@ const MarketContent = (props) => {
     <div className={cx("market-content-wrap")}>
       <Router>
         <Switch>
-          <Route exact path="/market-1" component={MarketSurveyArea} />
-          <Route exact path="/market-2" component={MarketSurveyResultArea} />
-          <Redirect to="/market-1" />
+          <Route
+            exact
+            path="/Marketpage/market-1"
+            component={MarketSurveyArea}
+          />
+          <Route
+            path="/Marketpage/market-2"
+            component={MarketSurveyResultArea}
+          />
+          <Redirect to="/Marketpage/market-1" />
         </Switch>
       </Router>
     </div>
