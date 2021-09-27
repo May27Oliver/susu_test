@@ -1,3 +1,158 @@
 .source-page-wrap {
   width: 100%;
 }
+.source-page-content {
+  padding-top: 50px;
+  width: 100%;
+}
+
+.source-intro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.source-title {
+  width: 100%;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  line-height: 50px;
+}
+.source-intro-words {
+  width: 61vw;
+  font-size: 12px;
+  line-height: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+/* 兩顆大球球 */
+.source-two-circle-col {
+  margin-top: 74px;
+  display: flex;
+  justify-content: space-around;
+}
+.source-circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 31vw;
+  height: 31vw;
+  border: 1px solid #cccbcb;
+  border-radius: 50%;
+  padding-bottom: 4vw;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.source-circle:active {
+  border: 1px solid rgb(57, 9, 189);
+}
+.source-circle.soft-power {
+  background: url("../../image/sourcepic1.png") no-repeat;
+  background-size: 60%;
+  background-position: top 20% left 50%;
+}
+.source-circle.hard-power {
+  background: url("../../image/sourcepic2.png") no-repeat;
+  background-size: 60%;
+  background-position: top 20% left 50%;
+}
+
+.source-circle-title {
+  text-align: center;
+  font-size: 12.46px;
+  line-height: 16px;
+  margin: 0 0 14px 0;
+}
+.source-circle-content {
+  padding: 0 75px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 10px;
+}
+.source-click-to-start {
+  text-align: center;
+}
+.source-click-to-start {
+  margin-top: 20px;
+  font-size: 10.68px;
+  color: #9a9a9a;
+}
+
+/* 下面那顆按鈕 */
+.bottom-buttom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 60px 0 85px 0;
+}
+.button.button-to-next-chapter {
+  width: 132px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50px;
+  border: 1px solid #262626;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* form page */
+.source-form-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-intro {
+  width: 83vw;
+}
+.form-intro p {
+  font-size: 12px;
+  line-height: 20px;
+}
+.source-form-col {
+  margin-top: 51px;
+  width: 83vw;
+  height: 42vw;
+  background: rgb(255, 208, 53);
+  position: relative;
+  display: flex;
+}
+.source-form-col::before {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: -25px;
+  right: -25px;
+  background: url("../../image/gear.png");
+}
+.source-form-col::after {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  bottom: -25px;
+  left: -25px;
+  background: url("../../image/gear.png");
+}
+.seperate-line {
+  width: 1px;
+  height: 83%;
+  background: #fff;
+}
+.col {
+  flex: 1;
+}
+.bottom-buttom {
+  position: relative;
+}
+.bottom-buttom::before {
+  content: "";
+  background: url("../../image/workhand.png");
+  position: absolute;
+  top: -167px;
+  width: 203px;
+  height: 167px;
+}
