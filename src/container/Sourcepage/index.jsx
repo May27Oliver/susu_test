@@ -77,6 +77,7 @@ const SourcepageIntro = () => {
   );
 };
 const SourcepageForm = () => {
+  const history = useHistory();
   return (
     <div className={cx("source-form-wrap")}>
       <div className={cx("form-intro")}>
@@ -93,14 +94,15 @@ const SourcepageForm = () => {
         <div className={cx("col", "col-left")}>
           <div className={cx("selected-items-col")}>
             <div className={cx("selected-item")}>電資</div>
+            <textarea
+              className={cx("text-area-col")}
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="請輸入此領域您認為您們團隊所需的硬實力......"
+            ></textarea>
           </div>
-          <textarea
-            className={cx("text-area-col")}
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-          ></textarea>
         </div>
         <div className={cx("seperate-line")}></div>
         {/* 右側 */}
@@ -122,7 +124,12 @@ const SourcepageForm = () => {
         </div>
       </div>
       <div className={cx("bottom-buttom")}>
-        <div className={cx("button", "button-to-next-chapter")}>確認送出</div>
+        <div
+          className={cx("button", "button-to-next-chapter")}
+          onClick={() => history.push("/Homepage")}
+        >
+          確認送出
+        </div>
       </div>
     </div>
   );
