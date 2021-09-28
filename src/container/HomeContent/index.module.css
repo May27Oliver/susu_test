@@ -13,16 +13,16 @@
 }
 .demo-name {
   flex: 0 0 335px;
-  background: url("../../image/demoIntro.png") no-repeat;
-  background-size: contain;
-  background-position: bottom 0px right 38px;
+  background: url("../../image/susuBand.jpg") no-repeat;
+  background-size: 40%;
+  background-position: bottom 0px right 50px;
   border-right: 1px solid #ccc;
 }
 .demo-name-title {
   box-sizing: border-box;
   width: 100%;
   font-size: 14px;
-  padding-left: 42px;
+  padding-left: 50px;
   line-height: 94px;
 }
 

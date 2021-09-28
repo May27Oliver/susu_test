@@ -156,3 +156,53 @@
   width: 203px;
   height: 167px;
 }
+/* 左側區域 */
+.col.col-left {
+  padding: 28px 0 0 6vw;
+}
+.selected-item {
+  font-size: 20px;
+}
+/* 右側button區域 */
+.select-items-col {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 4vw 0 0 6vw;
+  box-sizing: border-box;
+}
+.select-item {
+  width: 6vw;
+  /* height: 2vw; */
+  line-height: 4vw;
+  border-radius: 3px;
+  border: 1px solid #cccbcb;
+  background: #fff;
+  text-align: center;
+  margin: 0 25px 16px 0;
+  cursor: pointer;
+  user-select: none;
+}
+.select-item:active {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.diy-col {
+  display: flex;
+  align-items: center;
+  padding: 28px 0 0 6vw;
+}
+.diy-input {
+  width: 140px;
+  height: 30px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  outline: none;
+  padding-left: 8px;
+  box-sizing: border-box;
+}
+.diy-gain {
+  padding-left: 10px;
+}

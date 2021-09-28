@@ -23,7 +23,7 @@ const HomeContent = ({ title, content }) => {
       <div className={cx("menu-wrap")}>
         <div
           className={cx("Sourcepage", "menu-item")}
-          onClick={() => history.push("./Sourcepage")}
+          onClick={() => history.push("./Sourcepage/SourcepageIntro")}
         >
           <div className={cx("menu-pic")}></div>
           <div className={cx("menu-title")}>資源調查表</div>

@@ -89,9 +89,37 @@ const SourcepageForm = () => {
         </p>
       </div>
       <div className={cx("source-form-col")}>
-        <div className={cx("col", "col-left")}></div>
+        {/* 左側 */}
+        <div className={cx("col", "col-left")}>
+          <div className={cx("selected-items-col")}>
+            <div className={cx("selected-item")}>電資</div>
+          </div>
+          <textarea
+            className={cx("text-area-col")}
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
         <div className={cx("seperate-line")}></div>
-        <div className={cx("col", "col-right")}></div>
+        {/* 右側 */}
+        <div className={cx("col", "col-right")}>
+          <div className={cx("select-items-col")}>
+            <div className={cx("select-item")}>電資</div>
+            <div className={cx("select-item")}>生醫</div>
+            <div className={cx("select-item")}>化材</div>
+            <div className={cx("select-item")}>數據</div>
+            <div className={cx("select-item")}>行銷</div>
+            <div className={cx("select-item")}>財金</div>
+            <div className={cx("select-item")}>法律</div>
+          </div>
+          <div className={cx("diy-col")}>
+            <span className={cx("diy-others")}>其他：</span>
+            <input className={cx("diy-input")} type="text" />
+            <div className={cx("diy-gain")}>新增</div>
+          </div>
+        </div>
       </div>
       <div className={cx("bottom-buttom")}>
         <div className={cx("button", "button-to-next-chapter")}>確認送出</div>
