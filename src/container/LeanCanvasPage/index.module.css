@@ -1,3 +1,776 @@
-.source-page-wrap {
+.lean-canvas-page-wrap {
   width: 100%;
+}
+.lean-canvas-page-content {
+  padding: 0 12vw;
+}
+.lean-startup-col {
+  margin-top: 40px;
+  width: 100%;
+  height: 18vw;
+  background: #ffd151;
+  padding: 1px;
+}
+.startup-title {
+  padding-left: 5.5%;
+  font-size: 20px;
+  line-height: 40px;
+  margin-top: 1.5vw;
+}
+.startup-content {
+  display: flex;
+}
+.step-title {
+  font-size: 14px;
+  line-height: 40px;
+}
+.step-content {
+  font-size: 12px;
+  line-height: 20px;
+}
+.step-col {
+  box-sizing: border-box;
+  flex: 1;
+  padding-left: 5.5%;
+}
+.step-col:last-child {
+  padding-right: 5.5%;
+}
+.animation-col {
+  margin-top: 35px;
+}
+.animation-col-intro {
+  line-height: 24px;
+  font-size: 12px;
+}
+.play-start-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0 5px;
+  position: relative;
+}
+.play-start-icon::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background: url("../../image/startup.png") no-repeat;
+  background-size: 100%;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+}
+.seperate-line {
+  height: 1px;
+  width: 100%;
+  background: #d9d9d9;
+  margin: 45px 0;
+}
+.condolence-title,
+.communication-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.condolence-words,
+.communication-words {
+  margin-bottom: 2.8vw;
+}
+
+.condolence-words p,
+.communication-words p {
+  text-align: center;
+  font-size: 12px;
+  line-height: 2;
+}
+/* 卡片動畫區 */
+.animation-container-1 {
+  display: grid;
+  width: 100%;
+  height: 30.4vw;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 2.775vw 2.775vw 2.775vw 2.775vw 2.775vw 2.775vw 2.775vw 2.775vw 2.775vw 2.775vw;
+  grid-column-gap: 0.6vw;
+  grid-row-gap: 0.6vw;
+  margin-top: 30px;
+}
+
+.animation-container-2 {
+  display: grid;
+  width: 100%;
+  height: 30.4vw;
+  grid-template-columns: auto 5.55vw 5.55vw;
+  grid-template-rows: 5.55vw 5.55vw 5.55vw 5.55vw;
+  overflow: hidden;
+  grid-column-gap: 0.6vw;
+  grid-row-gap: 0.6vw;
+  margin-top: 30px;
+}
+
+.animation-container-3 {
+  display: grid;
+  width: 100%;
+  height: 30.4vw;
+  overflow: hidden;
+  grid-template-columns: 5.55vw 5.55vw auto;
+  grid-template-rows: 5.55vw 5.55vw 5.55vw 5.55vw;
+  grid-column-gap: 0.6vw;
+  grid-row-gap: 0.6vw;
+  margin-top: 30px;
+}
+
+.animation-item {
+  box-shadow: 0px 1.7451px 8.72549px rgba(0, 0, 0, 0.19);
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  box-sizing: border-box;
+  padding: 20px;
+  transition: grid-column 3s ease-in-out;
+}
+.animate-word {
+  flex: 0 0 2.5vw;
+  height: 4vw;
+  background: #ffd151;
+  border: 1.00574px solid #979797;
+  font-family: "Helvetica";
+  font-size: 30px;
+  text-align: center;
+  line-height: 4vw;
+  border-radius: 2px;
+}
+.item-head-content .head-title {
+  margin: 0;
+}
+.item-head-content {
+  margin-left: 10px;
+}
+/* 步驟零 */
+.animation-item.a-1-0 {
+  grid-column: 1/3;
+  grid-row: 1/7;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-2-0 {
+  grid-column: 11/13;
+  grid-row: 1/7;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-3-0 {
+  grid-column: 6/8;
+  grid-row: 1/7;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-4-0 {
+  grid-column: 3/6;
+  grid-row: 1/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-5-0 {
+  grid-column: 8/11;
+  grid-row: 4/7;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-6-0 {
+  grid-column: 7/13;
+  grid-row: 7/10;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-7-0 {
+  grid-column: 1/7;
+  grid-row: 7/10;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-8-0 {
+  grid-column: 3/6;
+  grid-row: 4/7;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-9-0 {
+  grid-column: 8/11;
+  grid-row: 1/4;
+  transition: grid-column 3s ease-in-out;
+}
+/* 步驟一 */
+.animation-item.a-1-1 {
+  grid-column: 1/2;
+  grid-row: 1/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-2-1 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-3-1 {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-4-1 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-5-1 {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-6-1 {
+  grid-column: 3/4;
+  grid-row: 4/6;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-7-1 {
+  grid-column: 2/3;
+  grid-row: 4/6;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-8-1 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-9-1 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+
+/* 步驟二 */
+.animation-item.a-1-2 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-2-2 {
+  grid-column: 3/12;
+  grid-row: 1/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-3-2 {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-4-2 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-5-2 {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-6-2 {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-7-2 {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-8-2 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-9-2 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+
+/* 步驟三 */
+.animation-item.a-1-3 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-2-3 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-3-3 {
+  grid-column: 1/2;
+  grid-row: 1/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-4-3 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-5-3 {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-6-3 {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-7-3 {
+  grid-column: 3/4;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-8-3 {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-9-3 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+
+/* 步驟四 */
+.animation-item.a-1-4 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-2-4 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-3-4 {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-4-4 {
+  grid-column: 1/2;
+  grid-row: 1/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-5-4 {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-6-4 {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-7-4 {
+  grid-column: 3/4;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-8-4 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-9-4 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+
+/* 步驟五 */
+.animation-item.a-1-5 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-2-5 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-3-5 {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-4-5 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-5-5 {
+  grid-column: 3/4;
+  grid-row: 1/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-6-5 {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-7-5 {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-8-5 {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-9-5 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+
+/* 步驟六 */
+.animation-item.a-1-6 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-2-6 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-3-6 {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-4-6 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-5-6 {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-6-6 {
+  grid-column: 3/4;
+  grid-row: 1/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-7-6 {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-8-6 {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-9-6 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+
+/* 步驟七 */
+.animation-item.a-1-7 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-2-7 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-3-7 {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-4-7 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-5-7 {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-6-7 {
+  grid-column: 3/4;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-7-7 {
+  grid-column: 1/2;
+  grid-row: 1/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-8-7 {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-9-7 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+
+/* 步驟八 */
+.animation-item.a-1-8 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-2-8 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-3-8 {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-4-8 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-5-8 {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-6-8 {
+  grid-column: 3/4;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-7-8 {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-8-8 {
+  grid-column: 1/2;
+  grid-row: 1/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-9-8 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+
+/* 步驟九 */
+.animation-item.a-1-9 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-2-9 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-3-9 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-4-9 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-5-9 {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-6-9 {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-7-9 {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-8-9 {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  transition: grid-column 3s ease-in-out;
+}
+.animation-item.a-9-9 {
+  grid-column: 3/4;
+  grid-row: 1/5;
+  transition: grid-column 3s ease-in-out;
+}
+
+/* CardContent */
+.head-title-col {
+  display: flex;
+  box-sizing: border-box;
+}
+.head-title {
+  font-size: 13px;
+  margin-left: 5px;
+}
+.item-body {
+  margin-top: 13px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.condolence-cards-col {
+  display: flex;
+  justify-content: space-between;
+}
+.condolence-card {
+  flex: 1;
+  background: #e4e4e4;
+  height: 11vw;
+  margin-right: 14px;
+  box-sizing: border-box;
+  padding: 2.4vw 2.2vw;
+  position: relative;
+}
+
+.condolence-card::before {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  right: -30px;
+  width: 30px;
+  height: 5px;
+  z-index: 11;
+  background: #00b5f4;
+}
+
+.condolence-card::after {
+  content: "";
+  position: absolute;
+  bottom: 18px;
+  right: -30px;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  z-index: 11;
+  background: #00b5f4;
+}
+.condolence-card:last-child::before {
+  position: static;
+}
+.condolence-card:last-child::after {
+  position: static;
+}
+
+.condolence-card:last-child {
+  margin-right: 0;
+}
+.condolence-card-title {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.condolence-card-content {
+  font-size: 12px;
+  text-align: center;
+}
+
+.communication-cards-col {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  margin-bottom: 55px;
+}
+.communication-card {
+  flex: 0 0 28.5vw;
+  height: 19vw;
+  padding: 5vw;
+  box-sizing: border-box;
+}
+.communication-card.first-col {
+  border: 3px solid #ffd151;
+}
+.communication-card.second-col {
+  border: 3px solid #00b5f4;
+}
+.communication-pic {
+  position: absolute;
+  top: 5%;
+  left: 35%;
+  margin: auto;
+  background: url("../../image/students.png") no-repeat;
+  background-size: contain;
+  width: 20vw;
+  height: 16.9vw;
+}
+.communication-card-title,
+.communication-card-content {
+  text-align: center;
+}
+.communication-card-title {
+  font-size: 18px;
+  margin-bottom: 22px;
+}
+.communication-card-content {
+  line-height: 20px;
+  font-size: 12px;
+}
+/* 還有哪些與延伸閱讀 */
+.seperate-line.more-col-line {
+  margin: 0;
+}
+.more-cards-col {
+  display: flex;
+}
+.more-card {
+  flex: 1;
+  height: 17.4vw;
+  margin-bottom: 24px;
+  padding: 3.5vw;
+  box-sizing: border-box;
+}
+.more-card:last-child {
+  border-left: 1px solid #d9d9d9;
+}
+.more-card-title {
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+.more-line {
+  display: flex;
+  margin-bottom: 13px;
+  font-size: 12px;
+  line-height: 30px;
+}
+.more-line-title.left {
+  padding: 0 25px;
+  background: #ffd151;
+  line-height: 30px;
+  border-radius: 15px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+@media (min-width: 1450px) {
+  .startup-title {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  .step-title {
+    font-size: 30px;
+    line-height: 70px;
+  }
+  .step-content {
+    font-size: 24px;
+    line-height: 36px;
+  }
 }

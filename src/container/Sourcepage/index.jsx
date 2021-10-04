@@ -11,7 +11,7 @@ import {
 import Footer from "component/Footer";
 import Header from "container/Header";
 import { useHistory } from "react-router";
-
+import PressToNext from "component/PressToNext";
 const cx = classNames.bind(styles);
 
 const SourcePage = (props) => {
@@ -65,14 +65,10 @@ const SourcepageIntro = () => {
           <div className={cx("source-click-to-start")}>點擊開始</div>
         </div>
       </div>
-      <div className={cx("bottom-buttom")}>
-        <div
-          className={cx("button", "button-to-next-chapter")}
-          onClick={() => history.push("./SourcepageForm")}
-        >
-          前往下一章
-        </div>
-      </div>
+      <PressToNext
+        name="前往下一章"
+        pressToNextPage={() => history.push("./SourcepageForm")}
+      />
     </>
   );
 };
