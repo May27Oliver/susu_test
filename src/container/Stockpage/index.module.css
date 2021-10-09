@@ -1,3 +1,150 @@
 .source-page-wrap {
   width: 100%;
 }
+.stock-page-content {
+  margin-top: 10px;
+}
+.stock-intro-col {
+  height: 100%;
+  height: 40vw;
+  background: #ffd151;
+  padding-bottom: 40px;
+}
+.stock-intro-words-col {
+  text-align: center;
+}
+.stock-intro-words-col {
+  font-size: 0.8vw;
+  box-sizing: border-box;
+  padding: 3.9vw 20.8vw 0 20.8vw;
+}
+.stock-pic {
+  background: url("../../image/stock01.png") no-repeat;
+  width: 206px;
+  height: 150px;
+  background-size: contain;
+  background-position: center;
+  margin: 3.4vw auto;
+}
+
+/* 中間字卡區 */
+.stock-cards-content-col {
+  margin-top: 50px;
+}
+.cards-col {
+  display: flex;
+  justify-content: center;
+}
+.hint-column {
+  box-sizing: border-box;
+  padding: 3.1vw;
+  background: #ffd151;
+  margin: left;
+  height: 18.4vw;
+  margin-left: 2vw;
+  width: 34vw;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 44px;
+  position: relative;
+}
+.arrow-right {
+  background: url("../../image/arrowright.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: -59px;
+  bottom: 20px;
+  width: 58px;
+  height: 44px;
+}
+.hint-title,
+.hint-input-title {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.hint-button {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  line-height: 34px;
+  padding: 0 10px;
+  background: transparent;
+  margin: 10px 0;
+  cursor: pointer;
+  margin-top: 30px;
+  border-radius: 2px;
+  margin-top: 40px;
+}
+.hint-input-button {
+  border: 1px solid #111;
+  color: #111;
+  line-height: 34px;
+  padding: 0 10px;
+  background: transparent;
+  margin: 10px 0;
+  cursor: pointer;
+  margin-top: 30px;
+  border-radius: 2px;
+  margin-top: 40px;
+}
+.hint-button-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.hint-content {
+  font-size: 12px;
+  line-height: 20px;
+}
+.hint-input-column {
+  box-sizing: border-box;
+  padding: 3.1vw;
+  background: #ffffff;
+  height: 18.4vw;
+  border: 1px solid #e9e9e9;
+  margin: right;
+  margin-right: 2vw;
+  width: 34vw;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 44px;
+  position: relative;
+}
+
+.hint-input-content {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.bottom_line_col {
+  display: flex;
+}
+.bottom-no {
+  line-height: 35px;
+}
+.bottom_line_input {
+  outline: none;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid #111;
+  height: 35px;
+  padding-left: 10px;
+  background: transparent;
+}
+/* 提交*/
+.submit-button-col {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.submit-btn {
+  font-size: 14px;
+  cursor: pointer;
+}
+.hint-words-content {
+  line-height: 2.5;
+}
+.further-reading {
+  font-size: 18px;
+  text-align: center;
+  line-height: 11vw;
+}

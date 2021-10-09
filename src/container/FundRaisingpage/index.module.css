@@ -1,3 +1,168 @@
 .source-page-wrap {
   width: 100%;
 }
+.fundraising-page-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 4vw;
+}
+.fund-raise-yellow-col,
+.fund-raise-grey-col {
+  width: 60vw;
+  padding: 3.4vw 7.6vw;
+  margin: 0 auto 4vw;
+  position: relative;
+}
+.fund-raise-yellow-col {
+  background: #ffc72c;
+}
+.fund-raise-grey-col {
+  background: #dedede;
+}
+.fund-raise-title {
+  font-size: 18px;
+  margin-bottom: 1.5vw;
+}
+.fund-raise-content {
+  font-size: 12px;
+  line-height: 2;
+  display: flex;
+}
+.fund-raise-content.fund-raise-wheel {
+  justify-content: center;
+}
+.fund-raising-btn {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.fund-raise-content-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fund-raise-content-left .describe-col,
+.fund-raise-content .describe-col {
+  font-size: 14px;
+}
+.fund-raise-content-right {
+  margin-left: 3vw;
+  flex: 1;
+  display: flex;
+}
+.fund-raising-wheel-col {
+  display: flex;
+  flex-direction: column;
+  width: 8vw;
+  box-sizing: border-box;
+  padding: 8vw 1vw 3vw;
+  border-radius: 4vw;
+  border: 0.582689px solid #c4c4c4;
+  margin-left: 1vw;
+  position: relative;
+}
+.fund-raising-top-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8vw;
+  height: 8vw;
+  border-radius: 50%;
+  background: #c4c4c4;
+  text-align: center;
+  line-height: 8vw;
+}
+.fund-raising-wheel-content {
+  text-align: center;
+}
+.fund-raise-btn-col {
+  display: flex;
+  flex: 1;
+}
+.fund-raising-three-wheel-col {
+  border: 1px solid #dedede;
+  border-radius: 0 0 44.1768px 44.1768px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4vw 0 2vw;
+}
+.fund-raising-three-wheel {
+  display: flex;
+  width: 15.6vw;
+  position: relative;
+}
+.fund-raising-three-top-circle {
+  position: absolute;
+  top: -7.1vw;
+  width: 8vw;
+  height: 8vw;
+  border-radius: 50%;
+  background: #f0f0f0;
+  text-align: center;
+  line-height: 8vw;
+}
+.fund-raising-three-top-circle.first-circle {
+  left: 0;
+}
+.fund-raising-three-top-circle.second-circle {
+  left: 6vw;
+}
+.fund-raising-three-top-circle.third-circle {
+  left: 12vw;
+}
+.fund-raising-three-wheel-content {
+  margin-top: 2vw;
+  text-align: center;
+}
+.fund-raising-three-wheel-bottom-content {
+  margin: 1vw 2vw 0;
+  text-align: center;
+  background: #f7e75b;
+  border-radius: 17.6707px;
+  padding: 1vw;
+}
+
+.fund-raise-yellow-col::before,
+.fund-raise-grey-col::before {
+  content: "";
+  position: absolute;
+  background: #111;
+  width: 0.8vw;
+  height: 6vw;
+  bottom: -6vw;
+  z-index: 11;
+}
+
+.fund-raise-yellow-col::after,
+.fund-raise-grey-col::after {
+  content: "";
+  position: absolute;
+  bottom: -6.5vw;
+  background: #111;
+  z-index: 11;
+  width: 1.5vw;
+  height: 1.5vw;
+  transform: rotate(45deg);
+}
+.fund-raise-grey-col::before {
+  left: 5vw;
+}
+.fund-raise-grey-col::after {
+  left: 4.7vw;
+}
+.fund-raise-grey-col:last-child::before {
+  content: "";
+  position: static;
+}
+.fund-raise-grey-col:last-child::after {
+  content: "";
+  position: static;
+}
+
+.fund-raise-yellow-col::before {
+  right: 5vw;
+}
+.fund-raise-yellow-col::after {
+  right: 4.7vw;
+}
