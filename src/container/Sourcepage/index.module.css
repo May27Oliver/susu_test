@@ -169,6 +169,15 @@
 .selected-item {
   font-size: 20px;
 }
+.selected-item-name {
+  color: white;
+  font-size: 12px;
+  margin-right: 24px;
+}
+.selected-item-name.edit-right-now {
+  color: #111;
+  font-size: 18px;
+}
 .text-area-col {
   box-sizing: border-box;
   padding: 10px 0 0 10px;
@@ -179,8 +188,11 @@
   border: 1px solid #ccc;
   border-radius: 3px;
   resize: none;
-  color: #e2dfdf;
+  color: black;
   outline: none;
+}
+.text-area-col::placeholder {
+  color: #e2dfdf;
 }
 /* 右側button區域 */
 .select-items-col {
@@ -208,6 +220,11 @@
   border: 1px solid #fff;
   color: #fff;
 }
+.select-item.select-item-isSelected {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
 .diy-col {
   display: flex;
   align-items: center;
@@ -223,5 +240,6 @@
   box-sizing: border-box;
 }
 .diy-gain {
+  cursor: pointer;
   padding-left: 10px;
 }

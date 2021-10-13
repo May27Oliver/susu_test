@@ -20,6 +20,7 @@ const SwitchTabs = (props) => {
     <div className={cx("switch-tabs-wrap")}>
       {selectedTab.map((item, index) => (
         <Tabs
+          key={item.title}
           title={item.title}
           selected={item.selected}
           onSelectTabs={() => {

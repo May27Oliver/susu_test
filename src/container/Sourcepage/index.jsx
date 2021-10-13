@@ -57,7 +57,10 @@ const SourcepageIntro = () => {
           </div>
           <div className={cx("source-click-to-start")}>點擊開始</div>
         </div>
-        <div className={cx("source-circle", "hard-power")}>
+        <div
+          className={cx("source-circle", "hard-power")}
+          onClick={() => history.push("./SourcepageForm")}
+        >
           <div className={cx("source-circle-title")}>創業硬實力</div>
           <div className={cx("source-circle-content")}>
             創業的過程中，技術常常是一間新創公司能否繼續走下去的關鍵點，我們在點子發想時就應該要。了解有人麼技術是我們在創業時必須要用到的。在這邊要讓大家了解團隊擁有和缺乏的，才能百戰百勝ㄛ！
@@ -74,6 +77,59 @@ const SourcepageIntro = () => {
 };
 const SourcepageForm = () => {
   const history = useHistory();
+  const textRef = React.useRef();
+  const addRef = React.useRef();
+  /**
+   * 電資： 1
+   * 生醫： 2
+   * 化材： 3
+   * 數據： 4
+   * 行銷： 5
+   * 財金： 6
+   * 法律： 7
+   * 其他： 8
+   */
+  //記錄左側編輯欄位狀態
+  const [titleList, setTitleList] = React.useState([]);
+  const [showEdit, setShowEdit] = React.useState({
+    isShow: false,
+    showItem: null,
+  });
+
+  //記錄項目與使用者輸入內容
+  const [selectItem, setSelectItem] = React.useState([
+    { name: "電資", content: "", isSelected: false },
+    { name: "生醫", content: "", isSelected: false },
+    { name: "化材", content: "", isSelected: false },
+    { name: "數據", content: "", isSelected: false },
+    { name: "行銷", content: "", isSelected: false },
+    { name: "財金", content: "", isSelected: false },
+    { name: "法律", content: "", isSelected: false },
+  ]);
+  React.useEffect(() => {
+    //切換項目編輯內容
+    if (textRef.current) {
+      textRef.current.value = selectItem[showEdit.showItem].content;
+    }
+    //如果titleList內的content沒有值就刪掉
+
+    setTitleList((prev) =>
+      prev
+        .map((item) => {
+          if (
+            !item.content &&
+            item.name !== selectItem[showEdit.showItem].name
+          ) {
+            return;
+          }
+          return item;
+        })
+        .filter(Boolean)
+    );
+  }, [textRef.current, showEdit.showItem]);
+
+  console.log("titleList", titleList);
+  console.log("showEdit", showEdit);
   return (
     <div className={cx("source-form-wrap")}>
       <div className={cx("form-intro")}>
@@ -88,34 +144,125 @@ const SourcepageForm = () => {
       <div className={cx("source-form-col")}>
         {/* 左側 */}
         <div className={cx("col", "col-left")}>
-          <div className={cx("selected-items-col")}>
-            <div className={cx("selected-item")}>電資</div>
-            <textarea
-              className={cx("text-area-col")}
-              name=""
-              id=""
-              cols="30"
-              rows="10"
-              placeholder="請輸入此領域您認為您們團隊所需的硬實力......"
-            ></textarea>
-          </div>
+          {showEdit.isShow ? (
+            <div className={cx("selected-items-col")}>
+              <div className={cx("selected-item")}>
+                {titleList.map((item, i) => (
+                  <span
+                    key={item.name}
+                    className={cx(
+                      "selected-item-name",
+                      item.name === selectItem[showEdit.showItem].name
+                        ? "edit-right-now"
+                        : ""
+                    )}
+                  >
+                    {item.name}
+                  </span>
+                ))}
+              </div>
+              <textarea
+                className={cx("text-area-col")}
+                ref={textRef}
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="請輸入此領域您認為您們團隊所需的硬實力......"
+                onChange={(e) => {
+                  setSelectItem((prev) =>
+                    prev.map((item, i) => {
+                      if (i === showEdit.showItem) {
+                        return { ...item, content: e.target.value };
+                      }
+                      return item;
+                    })
+                  );
+                  setTitleList((prev) =>
+                    prev
+                      .map((item) => {
+                        if (item.name === selectItem[showEdit.showItem].name) {
+                          return { ...item, content: e.target.value };
+                        }
+                        return item;
+                      })
+                      .filter(Boolean)
+                  );
+                }}
+              ></textarea>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
         <div className={cx("seperate-line")}></div>
         {/* 右側 */}
         <div className={cx("col", "col-right")}>
           <div className={cx("select-items-col")}>
-            <div className={cx("select-item")}>電資</div>
-            <div className={cx("select-item")}>生醫</div>
-            <div className={cx("select-item")}>化材</div>
-            <div className={cx("select-item")}>數據</div>
-            <div className={cx("select-item")}>行銷</div>
-            <div className={cx("select-item")}>財金</div>
-            <div className={cx("select-item")}>法律</div>
+            {selectItem.map((item, i) => (
+              <div
+                className={cx(
+                  "select-item",
+                  //出現已選擇樣式的條件
+                  (item.isSelected && item.content !== "") ||
+                    showEdit.showItem === i
+                    ? "select-item-isSelected"
+                    : ""
+                )}
+                key={item.name}
+                onClick={() => {
+                  if (
+                    !titleList.some((titleItem) => titleItem.name === item.name)
+                  ) {
+                    setTitleList([...titleList, item]);
+                  }
+                  if (
+                    showEdit.showItem &&
+                    selectItem[showEdit.showItem].content !== ""
+                  ) {
+                  }
+                  setShowEdit({ isShow: true, showItem: i });
+                  setSelectItem((prev) => {
+                    //標記已選過
+                    return prev.map((prevItem, prevSequnec) => {
+                      if (i === prevSequnec) {
+                        return {
+                          ...prevItem,
+                          isSelected: true,
+                        };
+                      }
+                      return prevItem;
+                    });
+                  });
+                }}
+              >
+                {item.name}
+              </div>
+            ))}
           </div>
           <div className={cx("diy-col")}>
             <span className={cx("diy-others")}>其他：</span>
-            <input className={cx("diy-input")} type="text" />
-            <div className={cx("diy-gain")}>新增</div>
+            <input className={cx("diy-input")} ref={addRef} type="text" />
+            <div
+              className={cx("diy-gain")}
+              onClick={() => {
+                if (
+                  addRef.current.value !== "" &&
+                  addRef.current.value.length < 3
+                ) {
+                  setSelectItem([
+                    ...selectItem,
+                    {
+                      name: addRef.current.value,
+                      content: "",
+                      isSelected: false,
+                    },
+                  ]);
+                }
+              }}
+            >
+              新增
+            </div>
           </div>
         </div>
       </div>
