@@ -126,6 +126,20 @@
   box-sizing: border-box;
   padding: 20px;
   transition: grid-column 3s ease-in-out;
+  position: relative;
+}
+.next-step-button {
+  width: 40px;
+  height: 40px;
+  background: url("../../image/startup.png") no-repeat;
+  background-size: 100%;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+.next-step-button.for-col-1.step-0 {
+  top: 25px;
+  right: 0;
 }
 .animate-word {
   flex: 0 0 2.5vw;
@@ -137,6 +151,16 @@
   text-align: center;
   line-height: 4vw;
   border-radius: 2px;
+}
+.animate-word.small-size {
+  height: 2.5vw;
+  line-height: 2.5vw;
+}
+.head-title-col.pos-center,
+.animation-item.pos-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .item-head-content .head-title {
   margin: 0;
@@ -196,6 +220,7 @@
   grid-row: 1/5;
   transition: grid-column 3s ease-in-out;
 }
+
 .animation-item.a-2-1 {
   grid-column: 3/4;
   grid-row: 1/2;
@@ -218,12 +243,12 @@
 }
 .animation-item.a-6-1 {
   grid-column: 3/4;
-  grid-row: 4/6;
+  grid-row: 4/5;
   transition: grid-column 3s ease-in-out;
 }
 .animation-item.a-7-1 {
   grid-column: 2/3;
-  grid-row: 4/6;
+  grid-row: 4/5;
   transition: grid-column 3s ease-in-out;
 }
 .animation-item.a-8-1 {
@@ -612,11 +637,15 @@
   grid-row: 1/5;
   transition: grid-column 3s ease-in-out;
 }
-
+.expand-col {
+  margin: 25px 0 0 15px;
+  font-size: 12px;
+}
 /* CardContent */
 .head-title-col {
   display: flex;
   box-sizing: border-box;
+  position: relative;
 }
 .head-title {
   font-size: 13px;
@@ -759,6 +788,50 @@
   border-radius: 15px;
   font-weight: bold;
   margin-right: 10px;
+}
+.bottom_line_col {
+  margin-top: 5px;
+  display: flex;
+}
+.bottom-no {
+  line-height: 25px;
+  margin-right: 20px;
+}
+.bottom_line_input {
+  outline: none;
+  border: none;
+  flex: 1;
+  border-bottom: 1px solid #111;
+  height: 35px;
+  padding-left: 10px;
+  background: transparent;
+}
+.bottom_no_line_input {
+  outline: none;
+  border: none;
+  flex: 1;
+  height: 25px;
+  padding-left: 10px;
+  background: transparent;
+}
+.head-title.expand-style {
+  flex: 0 0 53px;
+}
+.back-col {
+  display: flex;
+  flex: 0 0 5vw;
+  justify-content: flex-end;
+}
+.back-btn {
+  color: #9d9d9d;
+  font-size: 12px;
+  cursor: pointer;
+}
+.head-content {
+  font-size: 12px;
+  line-height: 2;
+  flex: 1;
+  margin: 0 20px 0;
 }
 @media (min-width: 1450px) {
   .startup-title {

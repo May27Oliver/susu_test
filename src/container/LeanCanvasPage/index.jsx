@@ -19,46 +19,55 @@ const LeanCanvasPage = (props) => {
     1: {
       itemStyle: "1",
       containerStyle: "2",
+      last: 0,
       next: 2,
     },
     2: {
       itemStyle: "2",
       containerStyle: "3",
+      last: 1,
       next: 3,
     },
     3: {
       itemStyle: "3",
       containerStyle: "2",
+      last: 2,
       next: 4,
     },
     4: {
       itemStyle: "4",
       containerStyle: "2",
+      last: 3,
       next: 5,
     },
     5: {
       itemStyle: "5",
       containerStyle: "3",
+      last: 4,
       next: 6,
     },
     6: {
       itemStyle: "6",
       containerStyle: "3",
+      last: 5,
       next: 7,
     },
     7: {
       itemStyle: "7",
       containerStyle: "2",
+      last: 6,
       next: 8,
     },
     8: {
       itemStyle: "8",
       containerStyle: "2",
+      last: 7,
       next: 9,
     },
     9: {
       itemStyle: "9",
       containerStyle: "3",
+      last: 8,
       next: 0,
     },
   };
@@ -146,7 +155,7 @@ const LeanCanvasPage = (props) => {
             Canvas精實畫布將整個事業整理清楚，其中包含九個面向，填寫完此畫布才能進入下一步哦！(按
             <span
               className={cx("play-start-icon")}
-              // onClick={() => setAnimateStep(animateStepInfo[animateStep].next)}
+              onClick={() => setAnimateStep(animateStepInfo[animateStep].next)}
             >
               {" "}
             </span>
@@ -157,179 +166,872 @@ const LeanCanvasPage = (props) => {
               `animation-container-${animateStepInfo[animateStep].containerStyle}`
             )}
           >
+            {/* card 1 */}
             <div
               className={cx(
                 "animation-item",
-                `a-1-${animateStepInfo[animateStep].itemStyle}`
+                `a-1-${animateStepInfo[animateStep].itemStyle}`,
+                !(animateStep === 0 || animateStep === 1) ? "pos-center" : ""
               )}
             >
               <div className={cx("item-head")}>
-                <div className={cx("head-title-col")}>
-                  <div className={cx("animate-word")}>1</div>
-                  <span className={cx("head-title")}>
-                    {CardContents[1].headTitle}
-                  </span>
-                </div>
-              </div>
-              <div className={cx("item-body")}>
-                {CardContents[1].headContent}
-              </div>
-            </div>
-            <div
-              className={cx(
-                "animation-item",
-                `a-2-${animateStepInfo[animateStep].itemStyle}`
-              )}
-            >
-              <div className={cx("item-head")}>
-                <div className={cx("head-title-col")}>
-                  <div className={cx("animate-word")}>2</div>
-                  <span className={cx("head-title")}>
-                    {CardContents[2].headTitle}
-                  </span>
-                </div>
-              </div>
-              <div className={cx("item-body")}>
-                {CardContents[2].headContent}
-              </div>
-            </div>
-            <div
-              className={cx(
-                "animation-item",
-                `a-3-${animateStepInfo[animateStep].itemStyle}`
-              )}
-            >
-              <div className={cx("item-head")}>
-                <div className={cx("head-title-col")}>
-                  <div className={cx("animate-word")}>3</div>
-                  <span className={cx("head-title")}>
-                    {CardContents[3].headTitle}
-                  </span>
-                </div>
-              </div>
-              <div className={cx("item-body")}>
-                {CardContents[3].headContent}
-              </div>
-            </div>
-            <div
-              className={cx(
-                "animation-item",
-                `a-4-${animateStepInfo[animateStep].itemStyle}`
-              )}
-            >
-              <div className={cx("item-head")}>
-                <div className={cx("head-title-col")}>
-                  <div className={cx("animate-word")}>4</div>
-                  <div className={cx("item-head-content")}>
+                <div
+                  className={cx(
+                    "head-title-col",
+                    !(animateStep === 0 || animateStep === 1)
+                      ? "pos-center"
+                      : ""
+                  )}
+                >
+                  <div
+                    className={cx(
+                      "animate-word",
+                      animateStep === 0 || animateStep === 1 ? "" : "small-size"
+                    )}
+                  >
+                    1
+                  </div>
+                  {animateStep === 0 && (
                     <span className={cx("head-title")}>
-                      {CardContents[4].headTitle}
+                      {CardContents[1].headTitle}
                     </span>
-                    <div className={cx("item-body")}>
-                      {CardContents[4].headContent}
+                  )}
+                  {animateStep === 0 && (
+                    <div
+                      className={cx("next-step-button", "for-col-1", "step-0")}
+                      onClick={() =>
+                        setAnimateStep(animateStepInfo[animateStep].next)
+                      }
+                    ></div>
+                  )}
+                  {animateStep === 1 && (
+                    <>
+                      <div className={cx("head-title", "expand-style")}>
+                        {CardContents[1].headTitle}
+                      </div>
+                      <div className={cx("head-content")}>
+                        第一個目標是定位問題並且解決，我們首先要找出使用者所面臨的問題，請大家集思廣益。
+                        之後我們所要進行的就是解決這些問題，在設計思維裡面常常提到！
+                        <br />
+                        （請儘量簡短回答）
+                      </div>
+                      <div
+                        className={cx("back-col", "for-col-1")}
+                        onClick={() =>
+                          setAnimateStep(animateStepInfo[animateStep].last)
+                        }
+                      >
+                        <span className={cx("back-btn")}>back</span>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+              {animateStep === 0 && (
+                <div className={cx("item-body")}>
+                  {CardContents[1].headContent}
+                </div>
+              )}
+              {animateStep === 1 && (
+                <>
+                  <div className={cx("expand-col", "for-col-1")}>
+                    <span>Ｑ：使用者所面臨的三大問題是什麼？</span>
+                    <div className={cx("bottom_line_col")}>
+                      <div className={cx("bottom-no")}>1.</div>
+                      <input type="text" className={cx("bottom_line_input")} />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <div className={cx("bottom-no")}>2.</div>
+                      <input type="text" className={cx("bottom_line_input")} />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <div className={cx("bottom-no")}>3.</div>
+                      <input type="text" className={cx("bottom_line_input")} />
                     </div>
                   </div>
-                </div>
-              </div>
+                  <div
+                    className={cx("next-step-button")}
+                    onClick={() =>
+                      setAnimateStep(animateStepInfo[animateStep].next)
+                    }
+                  ></div>
+                </>
+              )}
             </div>
+            {/* card 2 */}
             <div
               className={cx(
                 "animation-item",
-                `a-5-${animateStepInfo[animateStep].itemStyle}`
+                `a-2-${animateStepInfo[animateStep].itemStyle}`,
+                !(animateStep === 0 || animateStep === 2) ? "pos-center" : ""
               )}
             >
               <div className={cx("item-head")}>
-                <div className={cx("head-title-col")}>
-                  <div className={cx("animate-word")}>5</div>
-                  <div className={cx("item-head-content")}>
-                    <span className={cx("head-title")}>
-                      {CardContents[5].headTitle}
-                    </span>
-                    <div className={cx("item-body")}>
-                      {CardContents[5].headContent}
-                    </div>
+                <div
+                  className={cx(
+                    "head-title-col",
+                    !(animateStep === 0 || animateStep === 2)
+                      ? "pos-center"
+                      : ""
+                  )}
+                >
+                  <div
+                    className={cx(
+                      "animate-word",
+                      animateStep === 0 || animateStep === 2 ? "" : "small-size"
+                    )}
+                  >
+                    2
                   </div>
+                  {animateStep === 0 && (
+                    <span className={cx("head-title")}>
+                      {CardContents[2].headTitle}
+                    </span>
+                  )}
+                  {animateStep === 2 && (
+                    <>
+                      <div className={cx("head-title", "expand-style")}>
+                        {CardContents[2].headTitle}
+                      </div>
+                      <div className={cx("head-content")}>
+                        團隊的價值主張將類似於團隊產品的核心競爭力，也是構建團隊文化的重要一環。快來發想您們團隊的獨特主張吧！(文案想想)
+                        <br />
+                        （請儘量簡短回答）
+                      </div>
+                      <div
+                        className={cx("back-col", "for-col-1")}
+                        onClick={() =>
+                          setAnimateStep(animateStepInfo[animateStep].last)
+                        }
+                      >
+                        <span className={cx("back-btn")}>back</span>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
+              {animateStep === 0 && (
+                <div className={cx("item-body")}>
+                  {CardContents[2].headContent}
+                </div>
+              )}
+              {animateStep === 2 && (
+                <>
+                  <div className={cx("expand-col", "for-col-1")}>
+                    <span>
+                      Ｑ：你的目標客群或是早期使用者是誰？他們的persona如何？
+                    </span>
+                    <div className={cx("bottom_line_col")}>
+                      <div className={cx("bottom-no")}>使用者的行為：</div>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ lineHeight: "25px" }}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <div className={cx("bottom-no")}>地區：</div>
+                      <input
+                        type="text"
+                        className={cx("bottom_no_line_input")}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <div className={cx("bottom-no")}>年齡：</div>
+                      <input
+                        type="text"
+                        className={cx("bottom_no_line_input")}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <div className={cx("bottom-no")}>性別：</div>
+                      <input
+                        type="text"
+                        className={cx("bottom_no_line_input")}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <div className={cx("bottom-no")}>社經地位：</div>
+                      <input
+                        type="text"
+                        className={cx("bottom_no_line_input")}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <div className={cx("bottom-no")}>心理特徵：</div>
+                      <input
+                        type="text"
+                        className={cx("bottom_no_line_input")}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className={cx("next-step-button")}
+                    onClick={() =>
+                      setAnimateStep(animateStepInfo[animateStep].next)
+                    }
+                  ></div>
+                </>
+              )}
             </div>
+            {/* card 3 */}
             <div
               className={cx(
                 "animation-item",
-                `a-6-${animateStepInfo[animateStep].itemStyle}`
+                `a-3-${animateStepInfo[animateStep].itemStyle}`,
+                !(animateStep === 0 || animateStep === 3) ? "pos-center" : ""
               )}
             >
               <div className={cx("item-head")}>
-                <div className={cx("head-title-col")}>
-                  <div className={cx("animate-word")}>6</div>
-                  <div className={cx("item-head-content")}>
-                    <span className={cx("head-title")}>
-                      {CardContents[6].headTitle}
-                    </span>
-                    <div className={cx("item-body")}>
-                      {CardContents[6].headContent}
-                    </div>
+                <div
+                  className={cx(
+                    "head-title-col",
+                    !(animateStep === 0 || animateStep === 3)
+                      ? "pos-center"
+                      : ""
+                  )}
+                >
+                  <div
+                    className={cx(
+                      "animate-word",
+                      animateStep === 0 || animateStep === 3 ? "" : "small-size"
+                    )}
+                  >
+                    3
                   </div>
+                  {animateStep === 0 && (
+                    <span className={cx("head-title")}>
+                      {CardContents[3].headTitle}
+                    </span>
+                  )}
+                  {animateStep === 3 && (
+                    <>
+                      <div className={cx("head-title", "expand-style")}>
+                        {CardContents[3].headTitle}
+                      </div>
+                      <div className={cx("head-content")}>
+                        團隊的價值主張將類似於團隊產品的核心競爭力，也是構建團隊文化的重要一環。快來發想您們團隊的獨特主張吧！
+                        <br />
+                        （請儘量簡短回答）
+                      </div>
+                      <div
+                        className={cx("back-col", "for-col-1")}
+                        onClick={() =>
+                          setAnimateStep(animateStepInfo[animateStep].last)
+                        }
+                      >
+                        <span className={cx("back-btn")}>back</span>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
+              {animateStep === 0 && (
+                <div className={cx("item-body")}>
+                  {CardContents[3].headContent}
+                </div>
+              )}
+              {animateStep === 3 && (
+                <>
+                  <div className={cx("expand-col", "for-col-3")}>
+                    <span>
+                      Ｑ：你的產品與現有的有何不同？你的產品為何直得引人注目？
+                    </span>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className={cx("next-step-button")}
+                    onClick={() =>
+                      setAnimateStep(animateStepInfo[animateStep].next)
+                    }
+                  ></div>
+                </>
+              )}
             </div>
+            {/* card 4 */}
             <div
               className={cx(
                 "animation-item",
-                `a-7-${animateStepInfo[animateStep].itemStyle}`
+                `a-4-${animateStepInfo[animateStep].itemStyle}`,
+                !(animateStep === 0 || animateStep === 4) ? "pos-center" : ""
               )}
             >
               <div className={cx("item-head")}>
-                <div className={cx("head-title-col")}>
-                  <div className={cx("animate-word")}>7</div>
-                  <div className={cx("item-head-content")}>
-                    <span className={cx("head-title")}>
-                      {CardContents[7].headTitle}
-                    </span>
-                    <div className={cx("item-body")}>
-                      {CardContents[7].headContent}
-                    </div>
+                <div
+                  className={cx(
+                    "head-title-col",
+                    !(animateStep === 0 || animateStep === 4)
+                      ? "pos-center"
+                      : ""
+                  )}
+                >
+                  <div
+                    className={cx(
+                      "animate-word",
+                      animateStep === 0 || animateStep === 4 ? "" : "small-size"
+                    )}
+                  >
+                    4
                   </div>
+                  {animateStep === 0 && (
+                    <div className={cx("item-head-content")}>
+                      <span className={cx("head-title")}>
+                        {CardContents[4].headTitle}
+                      </span>
+                      <div className={cx("item-body")}>
+                        {CardContents[4].headContent}
+                      </div>
+                    </div>
+                  )}
+                  {animateStep === 4 && (
+                    <>
+                      <div className={cx("head-title", "expand-style")}>
+                        {CardContents[4].headTitle}
+                      </div>
+                      <div className={cx("head-content")}>
+                        參照第一步，制定屬於你們的解決方案。
+                        <br />
+                        （請儘量簡短回答）
+                      </div>
+                      <div
+                        className={cx("back-col", "for-col-1")}
+                        onClick={() =>
+                          setAnimateStep(animateStepInfo[animateStep].last)
+                        }
+                      >
+                        <span className={cx("back-btn")}>back</span>
+                      </div>
+                    </>
+                  )}
                 </div>
+                {animateStep === 4 && (
+                  <>
+                    <div className={cx("expand-col", "for-col-4")}>
+                      <span>Ｑ：針對問題，說明你的解決方案的特點？</span>
+                      <div className={cx("bottom_line_col")}>
+                        <input
+                          type="text"
+                          className={cx("bottom_line_input")}
+                          style={{ flex: "0 0 90%" }}
+                        />
+                      </div>
+                      <div className={cx("bottom_line_col")}>
+                        <input
+                          type="text"
+                          className={cx("bottom_line_input")}
+                          style={{ flex: "0 0 90%" }}
+                        />
+                      </div>
+                      <div className={cx("bottom_line_col")}>
+                        <input
+                          type="text"
+                          className={cx("bottom_line_input")}
+                          style={{ flex: "0 0 90%" }}
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className={cx("next-step-button")}
+                      onClick={() =>
+                        setAnimateStep(animateStepInfo[animateStep].next)
+                      }
+                    ></div>
+                  </>
+                )}
               </div>
             </div>
+            {/* card 5 */}
             <div
               className={cx(
                 "animation-item",
-                `a-8-${animateStepInfo[animateStep].itemStyle}`
+                `a-5-${animateStepInfo[animateStep].itemStyle}`,
+                !(animateStep === 0 || animateStep === 5) ? "pos-center" : ""
               )}
             >
               <div className={cx("item-head")}>
-                <div className={cx("head-title-col")}>
-                  <div className={cx("animate-word")}>8</div>
-                  <div className={cx("item-head-content")}>
-                    <span className={cx("head-title")}>
-                      {CardContents[8].headTitle}
-                    </span>
-                    <div className={cx("item-body")}>
-                      {CardContents[8].headContent}
-                    </div>
+                <div
+                  className={cx(
+                    "head-title-col",
+                    !(animateStep === 0 || animateStep === 5)
+                      ? "pos-center"
+                      : ""
+                  )}
+                >
+                  <div
+                    className={cx(
+                      "animate-word",
+                      animateStep === 0 || animateStep === 5 ? "" : "small-size"
+                    )}
+                  >
+                    5
                   </div>
+                  {animateStep === 0 && (
+                    <div className={cx("item-head-content")}>
+                      <span className={cx("head-title")}>
+                        {CardContents[5].headTitle}
+                      </span>
+                      <div className={cx("item-body")}>
+                        {CardContents[5].headContent}
+                      </div>
+                    </div>
+                  )}
+                  {animateStep === 5 && (
+                    <>
+                      <div className={cx("head-title", "expand-style")}>
+                        {CardContents[5].headTitle}
+                      </div>
+                      <div className={cx("head-content")}>
+                        找出自我的通路以獲取更大的消費者接觸率，該選擇怎樣的通路呢？
+                        <br />
+                        （請儘量簡短回答）
+                      </div>
+                      <div
+                        className={cx("back-col", "for-col-1")}
+                        onClick={() =>
+                          setAnimateStep(animateStepInfo[animateStep].last)
+                        }
+                      >
+                        <span className={cx("back-btn")}>back</span>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
+              {animateStep === 5 && (
+                <>
+                  <div className={cx("expand-col", "for-col-4")}>
+                    <span>Ｑ：你要如何把產品服務拿到使用者面前？</span>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className={cx("next-step-button")}
+                    onClick={() =>
+                      setAnimateStep(animateStepInfo[animateStep].next)
+                    }
+                  ></div>
+                </>
+              )}
             </div>
+            {/* card 6 */}
             <div
               className={cx(
                 "animation-item",
-                `a-9-${animateStepInfo[animateStep].itemStyle}`
+                `a-6-${animateStepInfo[animateStep].itemStyle}`,
+                !(animateStep === 0 || animateStep === 6) ? "pos-center" : ""
               )}
             >
               <div className={cx("item-head")}>
-                <div className={cx("head-title-col")}>
-                  <div className={cx("animate-word")}>9</div>
-                  <div className={cx("item-head-content")}>
-                    <span className={cx("head-title")}>
-                      {CardContents[9].headTitle}
-                    </span>
-                    <div className={cx("item-body")}>
-                      {CardContents[9].headContent}
-                    </div>
+                <div
+                  className={cx(
+                    "head-title-col",
+                    !(animateStep === 0 || animateStep === 6)
+                      ? "pos-center"
+                      : ""
+                  )}
+                >
+                  <div
+                    className={cx(
+                      "animate-word",
+                      animateStep === 0 || animateStep === 6 ? "" : "small-size"
+                    )}
+                  >
+                    6
                   </div>
+                  {animateStep === 0 && (
+                    <div className={cx("item-head-content")}>
+                      <span className={cx("head-title")}>
+                        {CardContents[6].headTitle}
+                      </span>
+                      <div className={cx("item-body")}>
+                        {CardContents[6].headContent}
+                      </div>
+                    </div>
+                  )}
+                  {animateStep === 6 && (
+                    <>
+                      <div className={cx("head-title", "expand-style")}>
+                        {CardContents[6].headTitle}
+                      </div>
+                      <div className={cx("head-content")}>
+                        團隊的價值主張將類似於團隊產品的核心競爭力，也是構建團隊文化的重要一環。快來發想您們團隊的獨特主張吧！(文案想想)
+                        <br />
+                        （請儘量簡短回答）
+                      </div>
+                      <div
+                        className={cx("back-col", "for-col-1")}
+                        onClick={() =>
+                          setAnimateStep(animateStepInfo[animateStep].last)
+                        }
+                      >
+                        <span className={cx("back-btn")}>back</span>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
+              {animateStep === 6 && (
+                <>
+                  <div className={cx("expand-col", "for-col-4")}>
+                    <span>Ｑ：你的產品該如何獲利收費？</span>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className={cx("next-step-button")}
+                    onClick={() =>
+                      setAnimateStep(animateStepInfo[animateStep].next)
+                    }
+                  ></div>
+                </>
+              )}
+            </div>
+            {/* card 7 */}
+            <div
+              className={cx(
+                "animation-item",
+                `a-7-${animateStepInfo[animateStep].itemStyle}`,
+                !(animateStep === 0 || animateStep === 7) ? "pos-center" : ""
+              )}
+            >
+              <div className={cx("item-head")}>
+                <div
+                  className={cx(
+                    "head-title-col",
+                    !(animateStep === 0 || animateStep === 7)
+                      ? "pos-center"
+                      : ""
+                  )}
+                >
+                  <div
+                    className={cx(
+                      "animate-word",
+                      animateStep === 0 || animateStep === 7 ? "" : "small-size"
+                    )}
+                  >
+                    7
+                  </div>
+                  {animateStep === 0 && (
+                    <div className={cx("item-head-content")}>
+                      <span className={cx("head-title")}>
+                        {CardContents[7].headTitle}
+                      </span>
+                      <div className={cx("item-body")}>
+                        {CardContents[7].headContent}
+                      </div>
+                    </div>
+                  )}
+                  {animateStep === 7 && (
+                    <>
+                      <div
+                        className={cx("head-title", "expand-style")}
+                        style={{ flex: "0 0 115px" }}
+                      >
+                        {CardContents[7].headTitle}
+                      </div>
+                      <div className={cx("head-content")}>
+                        團隊的價值主張將類似於團隊產品的核心競爭力，也是構建團隊文化的重要一環。快來發想您們團隊的獨特主張吧！(文案想想)
+                        <br />
+                        （請儘量簡短回答）
+                      </div>
+                      <div
+                        className={cx("back-col", "for-col-1")}
+                        onClick={() =>
+                          setAnimateStep(animateStepInfo[animateStep].last)
+                        }
+                      >
+                        <span className={cx("back-btn")}>back</span>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+              {animateStep === 7 && (
+                <>
+                  <div className={cx("expand-col", "for-col-4")}>
+                    <span>
+                      Ｑ：建立MVP（最小可行商品）到推到使用者面前會需要多少錢？
+                    </span>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className={cx("next-step-button")}
+                    onClick={() =>
+                      setAnimateStep(animateStepInfo[animateStep].next)
+                    }
+                  ></div>
+                </>
+              )}
+            </div>
+            {/* card 8 */}
+            <div
+              className={cx(
+                "animation-item",
+                `a-8-${animateStepInfo[animateStep].itemStyle}`,
+                !(animateStep === 0 || animateStep === 8) ? "pos-center" : ""
+              )}
+            >
+              <div className={cx("item-head")}>
+                <div
+                  className={cx(
+                    "head-title-col",
+                    !(animateStep === 0 || animateStep === 8)
+                      ? "pos-center"
+                      : ""
+                  )}
+                >
+                  <div
+                    className={cx(
+                      "animate-word",
+                      animateStep === 0 || animateStep === 8 ? "" : "small-size"
+                    )}
+                  >
+                    8
+                  </div>
+                  {animateStep === 0 && (
+                    <div className={cx("item-head-content")}>
+                      <span className={cx("head-title")}>
+                        {CardContents[8].headTitle}
+                      </span>
+                      <div className={cx("item-body")}>
+                        {CardContents[8].headContent}
+                      </div>
+                    </div>
+                  )}
+                  {animateStep === 8 && (
+                    <>
+                      <div
+                        className={cx("head-title", "expand-style")}
+                        style={{ flex: "0 0 80px" }}
+                      >
+                        {CardContents[8].headTitle}
+                      </div>
+                      <div className={cx("head-content")}>
+                        數據的年代要靠數據說話，請建立屬於團隊的量化指標！
+                        <br />
+                        （請儘量簡短回答）
+                      </div>
+                      <div
+                        className={cx("back-col")}
+                        onClick={() =>
+                          setAnimateStep(animateStepInfo[animateStep].last)
+                        }
+                      >
+                        <span className={cx("back-btn")}>back</span>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+              {animateStep === 8 && (
+                <>
+                  <div className={cx("expand-col", "for-col-4")}>
+                    <span>Ｑ：透過清楚、量化的指標來測試你的假說</span>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className={cx("next-step-button")}
+                    onClick={() =>
+                      setAnimateStep(animateStepInfo[animateStep].next)
+                    }
+                  ></div>
+                </>
+              )}
+            </div>
+            {/* card 9 */}
+            <div
+              className={cx(
+                "animation-item",
+                `a-9-${animateStepInfo[animateStep].itemStyle}`,
+                !(animateStep === 0 || animateStep === 9) ? "pos-center" : ""
+              )}
+            >
+              <div className={cx("item-head")}>
+                <div
+                  className={cx(
+                    "head-title-col",
+                    !(animateStep === 0 || animateStep === 9)
+                      ? "pos-center"
+                      : ""
+                  )}
+                >
+                  <div
+                    className={cx(
+                      "animate-word",
+                      animateStep === 0 || animateStep === 9 ? "" : "small-size"
+                    )}
+                  >
+                    9
+                  </div>
+                  {animateStep === 0 && (
+                    <div className={cx("item-head-content")}>
+                      <span className={cx("head-title")}>
+                        {CardContents[9].headTitle}
+                      </span>
+                      <div className={cx("item-body")}>
+                        {CardContents[9].headContent}
+                      </div>
+                    </div>
+                  )}
+                  {animateStep === 9 && (
+                    <>
+                      <div
+                        className={cx("head-title", "expand-style")}
+                        style={{ flex: "0 0 115px" }}
+                      >
+                        {CardContents[9].headTitle}
+                      </div>
+                      <div className={cx("head-content")}>
+                        數據的年代要靠數據說話，請建立屬於團隊的量化指標！
+                        <br />
+                        （請儘量簡短回答）
+                      </div>
+                      <div
+                        className={cx("back-col")}
+                        onClick={() =>
+                          setAnimateStep(animateStepInfo[animateStep].last)
+                        }
+                      >
+                        <span className={cx("back-btn")}>back</span>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+              {animateStep === 9 && (
+                <>
+                  <div className={cx("expand-col", "for-col-4")}>
+                    <span>
+                      Ｑ：你擁有什麼是無法被購賣或複製的？（內部消息、與使用者的連結、背書、關鍵夥伴等等）
+                    </span>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                    <div className={cx("bottom_line_col")}>
+                      <input
+                        type="text"
+                        className={cx("bottom_line_input")}
+                        style={{ flex: "0 0 90%" }}
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className={cx("next-step-button")}
+                    onClick={() =>
+                      setAnimateStep(animateStepInfo[animateStep].next)
+                    }
+                  ></div>
+                </>
+              )}
             </div>
           </div>
         </div>
