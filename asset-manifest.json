@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/susu_test/static/css/main.212947dc.chunk.css",
-    "main.js": "/susu_test/static/js/main.478b0f7c.chunk.js",
-    "main.js.map": "/susu_test/static/js/main.478b0f7c.chunk.js.map",
+    "main.css": "/susu_test/static/css/main.6db0de31.chunk.css",
+    "main.js": "/susu_test/static/js/main.a2b633ad.chunk.js",
+    "main.js.map": "/susu_test/static/js/main.a2b633ad.chunk.js.map",
     "runtime-main.js": "/susu_test/static/js/runtime-main.ca81c2c7.js",
     "runtime-main.js.map": "/susu_test/static/js/runtime-main.ca81c2c7.js.map",
     "static/js/2.6492d9ca.chunk.js": "/susu_test/static/js/2.6492d9ca.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.59966ea1.chunk.js": "/susu_test/static/js/3.59966ea1.chunk.js",
     "static/js/3.59966ea1.chunk.js.map": "/susu_test/static/js/3.59966ea1.chunk.js.map",
     "index.html": "/susu_test/index.html",
-    "static/css/main.212947dc.chunk.css.map": "/susu_test/static/css/main.212947dc.chunk.css.map",
+    "static/css/main.6db0de31.chunk.css.map": "/susu_test/static/css/main.6db0de31.chunk.css.map",
     "static/js/2.6492d9ca.chunk.js.LICENSE.txt": "/susu_test/static/js/2.6492d9ca.chunk.js.LICENSE.txt",
     "static/media/index.module.css": "/susu_test/static/media/workhand.5410aff8.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ca81c2c7.js",
     "static/js/2.6492d9ca.chunk.js",
-    "static/css/main.212947dc.chunk.css",
-    "static/js/main.478b0f7c.chunk.js"
+    "static/css/main.6db0de31.chunk.css",
+    "static/js/main.a2b633ad.chunk.js"
   ]
 }
