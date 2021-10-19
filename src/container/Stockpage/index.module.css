@@ -54,9 +54,9 @@
   background: url("../../image/arrowright.png") no-repeat;
   background-size: contain;
   position: absolute;
-  right: -59px;
+  right: -4vw;
   bottom: 20px;
-  width: 58px;
+  width: 4vw;
   height: 44px;
 }
 .hint-title,
