@@ -128,12 +128,28 @@
   content: "";
   position: absolute;
   background: #111;
-  width: 0.8vw;
+  width: 0.3vw;
   height: 6vw;
   bottom: -6vw;
   z-index: 11;
 }
+.fund-raise-yellow-col.spin::before,
+.fund-raise-grey-col.spin::before {
+  content: "";
+  position: absolute;
+  background: #111;
+  width: 0.3vw;
+  height: 6vw;
+  bottom: -5vw;
+  z-index: 11;
+}
 
+.fund-raise-yellow-col.spin::before {
+  transform: rotate(-45deg);
+}
+.fund-raise-grey-col.spin::before {
+  transform: rotate(45deg);
+}
 .fund-raise-yellow-col::after,
 .fund-raise-grey-col::after {
   content: "";
@@ -145,24 +161,42 @@
   height: 1.5vw;
   transform: rotate(45deg);
 }
+.fund-raise-yellow-col.spin::after,
+.fund-raise-grey-col.spin::after {
+  content: "";
+  position: absolute;
+  bottom: -5.3vw;
+  right: 2vw;
+  background: #111;
+  z-index: 11;
+  width: 1.5vw;
+  height: 1.5vw;
+  transform: rotate(90deg);
+}
 .fund-raise-grey-col::before {
-  left: 5vw;
+  left: 5.3vw;
 }
 .fund-raise-grey-col::after {
   left: 4.7vw;
 }
-.fund-raise-grey-col:last-child::before {
+.fund-raise-grey-col.last-col::before {
   content: "";
   position: static;
 }
-.fund-raise-grey-col:last-child::after {
+.fund-raise-grey-col.last-col::after {
   content: "";
   position: static;
 }
 
 .fund-raise-yellow-col::before {
-  right: 5vw;
+  right: 5.3vw;
 }
 .fund-raise-yellow-col::after {
   right: 4.7vw;
+}
+.fund-raise-yellow-col.spin::after {
+  right: 2vw;
+}
+.fund-raise-grey-col.spin::after {
+  left: 2vw;
 }

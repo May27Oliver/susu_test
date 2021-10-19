@@ -50,3 +50,6 @@
 .investor-content.flex-row {
   display: flex;
 }
+.investor-content.margin-bottom {
+  margin-bottom: 50px;
+}

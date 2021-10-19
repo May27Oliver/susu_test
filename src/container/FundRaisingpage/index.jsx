@@ -9,12 +9,13 @@ import PressToNext from "../../component/PressToNext";
 const cx = classNames.bind(styles);
 
 const FundraisingPage = (props) => {
+  const [pageStep, setPageStep] = React.useState(0);
   return (
     <div className={cx("fundraising-page-wrap")}>
       <Header></Header>
       <div className={cx("fundraising-page-content")}>
         {/* first */}
-        <div className={cx("fund-raise-yellow-col")}>
+        <div className={cx("fund-raise-yellow-col", pageStep === 0 && "spin")}>
           <div className={cx("fund-raise-title")}>什麼是募資？？</div>
           <div className={cx("fund-raise-content")}>
             軟體、器材、租金和員工 ー
@@ -25,195 +26,239 @@ const FundraisingPage = (props) => {
             ー 大部分的公司會在第一階段就結束了。
           </div>
           <div className={cx("fund-raise-btn-col")}>
-            <PressToNext
-              classname={cx("fund-raising-btn")}
-              containerStyle={{
-                justifyContent: "flex-end",
-                marginBottom: 0,
-              }}
-              btnStyle={{ border: "1px solid #fff" }}
-              name={"next"}
-            />
+            {pageStep === 0 && (
+              <PressToNext
+                classname={cx("fund-raising-btn")}
+                containerStyle={{
+                  justifyContent: "flex-end",
+                  marginBottom: 0,
+                }}
+                btnStyle={{ border: "1px solid #fff" }}
+                name={"next"}
+                pressToNextPage={() => setPageStep(1)}
+              />
+            )}
           </div>
         </div>
         {/* second */}
-        <div className={cx("fund-raise-grey-col")}>
-          <div className={cx("fund-raise-title")}>募資輪又是什麼？</div>
-          <div className={cx("fund-raise-content")}>
-            理想狀況是這樣：獲得用戶，吸引投資人、獲得投資。現實狀況卻不是這麼容易。通常你第一次與專業投資人見面會是開始正式一次募資輪的時候。
-            如果你夠幸運的話，你會找到一個願意全額投資的創投，你們簽約、創投匯錢然後結束該輪。但大部分的投資人只會投資部分，這時你會需要找他其他的投資人加入。
-            當你和領投者已經談妥 term sheet
-            時，其他的投資人會被邀請加入然後適用相同條款。通常，term sheet
-            會設立一個最低的募集資金門檻 ー
-            也就是說，如果募到的資金未達門檻的話，所有投資人都有權利放棄。
-            每個階段都有適合的投資人，每個投資人投資的項目金額大小不同，通常投資有以下幾個階段。
+        {pageStep > 0 && (
+          <div className={cx("fund-raise-grey-col", pageStep === 1 && "spin")}>
+            <div className={cx("fund-raise-title")}>募資輪又是什麼？</div>
+            <div className={cx("fund-raise-content")}>
+              理想狀況是這樣：獲得用戶，吸引投資人、獲得投資。現實狀況卻不是這麼容易。通常你第一次與專業投資人見面會是開始正式一次募資輪的時候。
+              如果你夠幸運的話，你會找到一個願意全額投資的創投，你們簽約、創投匯錢然後結束該輪。但大部分的投資人只會投資部分，這時你會需要找他其他的投資人加入。
+              當你和領投者已經談妥 term sheet
+              時，其他的投資人會被邀請加入然後適用相同條款。通常，term sheet
+              會設立一個最低的募集資金門檻 ー
+              也就是說，如果募到的資金未達門檻的話，所有投資人都有權利放棄。
+              每個階段都有適合的投資人，每個投資人投資的項目金額大小不同，通常投資有以下幾個階段。
+            </div>
+            <div className={cx("fund-raise-btn-col")}>
+              {pageStep === 1 && (
+                <PressToNext
+                  classname={cx("fund-raising-btn")}
+                  containerStyle={{
+                    justifyContent: "flex-end",
+                    marginBottom: 0,
+                  }}
+                  btnStyle={{ border: "1px solid #111", color: "#111" }}
+                  name={"next"}
+                  pressToNextPage={() => setPageStep(2)}
+                />
+              )}
+            </div>
           </div>
-          <div className={cx("fund-raise-btn-col")}>
-            <PressToNext
-              classname={cx("fund-raising-btn")}
-              containerStyle={{
-                justifyContent: "flex-end",
-                marginBottom: 0,
-              }}
-              btnStyle={{ border: "1px solid #111", color: "#111" }}
-              name={"next"}
-            />
-          </div>
-        </div>
+        )}
         {/* third */}
-        <div className={cx("fund-raise-yellow-col")}>
-          <div className={cx("fund-raise-content")}>
-            <div className={cx("describe-col")}>當你有一個創意點子的時候。</div>
-          </div>
-          <div className={cx("fund-raise-btn-col")}>
-            <PressToNext
-              classname={cx("fund-raising-btn")}
-              containerStyle={{
-                justifyContent: "flex-end",
-                marginBottom: 0,
-              }}
-              btnStyle={{ border: "1px solid #fff" }}
-              name={"next"}
-            />
-          </div>
-        </div>
-        {/* forth */}
-        <div className={cx("fund-raise-grey-col")}>
-          <div className={cx("fund-raise-content", "fund-raise-wheel")}>
-            <div className={cx("fund-raise-content-left")}>
-              <div className={cx("describe-col")}>
-                有Prototype
-                <br /> 初步的商業模式
-                <br /> 已累積少數核心用戶。
-                <br />
-                <br /> 經歷天使輪與種子輪。
-              </div>
-            </div>
-            <div className={cx("fund-raise-content-right")}>
-              <div className={cx("fund-raising-wheel-col")}>
-                <div className={cx("fund-raising-top-circle")}>種子輪</div>
-                <div className={cx("fund-raising-wheel-content")}>
-                  金額：100k-1M
-                  <br /> 可能投資人：
-                  <br /> 親友 <br /> 小型天使投資人
-                  <br /> 業餘天使投資人
-                </div>
-              </div>
-              <div className={cx("fund-raising-wheel-col")}>
-                <div className={cx("fund-raising-top-circle")}>天使輪</div>
-                <div className={cx("fund-raising-wheel-content")}>
-                  金額：1M-10M
-                  <br /> 可能投資人：
-                  <br /> 專業投資人
-                  <br /> 早期創投
-                </div>
-              </div>
-            </div>
-            <div className={cx("fund-raise-btn-col")}>
-              <PressToNext
-                classname={cx("fund-raising-btn")}
-                containerStyle={{
-                  flex: 1,
-                  justifyContent: "flex-end",
-                  marginBottom: 0,
-                  height: "47px",
-                  alignSelf: "flex-end",
-                }}
-                btnStyle={{ border: "1px solid #111", color: "#111" }}
-                name={"next"}
-              />
-            </div>
-          </div>
-        </div>
-        {/* fifth */}
-        <div className={cx("fund-raise-yellow-col")}>
+        {pageStep > 1 && (
           <div
-            className={cx("fund-raise-content")}
-            style={{ marginTop: "5vw" }}
+            className={cx("fund-raise-yellow-col", pageStep === 2 && "spin")}
           >
-            <div className={cx("fund-raise-content-left")}>
-              <div className={cx("describe-col")}>之後會再經歷ABＣ輪募資。</div>
-            </div>
-            <div
-              className={cx("fund-raise-content-right")}
-              style={{ flex: "0 0 20vw" }}
-            >
-              <div className={cx("fund-raising-three-wheel-col")}>
-                <div className={cx("fund-raising-three-wheel")}>
-                  <div
-                    className={cx(
-                      "fund-raising-three-top-circle",
-                      "first-circle"
-                    )}
-                  >
-                    A輪
-                  </div>
-                  <div
-                    className={cx(
-                      "fund-raising-three-top-circle",
-                      "second-circle"
-                    )}
-                  >
-                    B輪
-                  </div>
-                  <div
-                    className={cx(
-                      "fund-raising-three-top-circle",
-                      "third-circle"
-                    )}
-                  >
-                    C輪
-                  </div>
-                </div>
-                <div className={cx("fund-raising-three-wheel-content")}>
-                  金額：10M-1B <br />
-                  可能投資人： <br />
-                  創投基金
-                </div>
-                <div className={cx("fund-raising-three-wheel-bottom-content")}>
-                  產品有成熟模樣並有完整的盈利模式
-                  <br /> 開始複製商業模式
-                  <br /> 正在為上市做準備
-                </div>
+            <div className={cx("fund-raise-content")}>
+              <div className={cx("describe-col")}>
+                當你有一個創意點子的時候。
               </div>
             </div>
             <div className={cx("fund-raise-btn-col")}>
+              {pageStep === 2 && (
+                <PressToNext
+                  classname={cx("fund-raising-btn")}
+                  containerStyle={{
+                    justifyContent: "flex-end",
+                    marginBottom: 0,
+                  }}
+                  btnStyle={{ border: "1px solid #fff" }}
+                  name={"next"}
+                  pressToNextPage={() => setPageStep(3)}
+                />
+              )}
+            </div>
+          </div>
+        )}
+        {/* forth */}
+        {pageStep > 2 && (
+          <div className={cx("fund-raise-grey-col", pageStep === 3 && "spin")}>
+            <div className={cx("fund-raise-content", "fund-raise-wheel")}>
+              <div className={cx("fund-raise-content-left")}>
+                <div className={cx("describe-col")}>
+                  有Prototype
+                  <br /> 初步的商業模式
+                  <br /> 已累積少數核心用戶。
+                  <br />
+                  <br /> 經歷天使輪與種子輪。
+                </div>
+              </div>
+              <div className={cx("fund-raise-content-right")}>
+                <div className={cx("fund-raising-wheel-col")}>
+                  <div className={cx("fund-raising-top-circle")}>種子輪</div>
+                  <div className={cx("fund-raising-wheel-content")}>
+                    金額：100k-1M
+                    <br /> 可能投資人：
+                    <br /> 親友 <br /> 小型天使投資人
+                    <br /> 業餘天使投資人
+                  </div>
+                </div>
+                <div className={cx("fund-raising-wheel-col")}>
+                  <div className={cx("fund-raising-top-circle")}>天使輪</div>
+                  <div className={cx("fund-raising-wheel-content")}>
+                    金額：1M-10M
+                    <br /> 可能投資人：
+                    <br /> 專業投資人
+                    <br /> 早期創投
+                  </div>
+                </div>
+              </div>
+              <div className={cx("fund-raise-btn-col")}>
+                {pageStep === 3 && (
+                  <PressToNext
+                    classname={cx("fund-raising-btn")}
+                    containerStyle={{
+                      flex: 1,
+                      justifyContent: "flex-end",
+                      marginBottom: 0,
+                      height: "47px",
+                      alignSelf: "flex-end",
+                    }}
+                    btnStyle={{ border: "1px solid #111", color: "#111" }}
+                    name={"next"}
+                    pressToNextPage={() => setPageStep(4)}
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+        {/* fifth */}
+        {pageStep > 3 && (
+          <div
+            className={cx("fund-raise-yellow-col", pageStep === 4 && "spin")}
+          >
+            <div
+              className={cx("fund-raise-content")}
+              style={{ marginTop: "5vw" }}
+            >
+              <div className={cx("fund-raise-content-left")}>
+                <div className={cx("describe-col")}>
+                  之後會再經歷ABＣ輪募資。
+                </div>
+              </div>
+              <div
+                className={cx("fund-raise-content-right")}
+                style={{ flex: "0 0 20vw" }}
+              >
+                <div className={cx("fund-raising-three-wheel-col")}>
+                  <div className={cx("fund-raising-three-wheel")}>
+                    <div
+                      className={cx(
+                        "fund-raising-three-top-circle",
+                        "first-circle"
+                      )}
+                    >
+                      A輪
+                    </div>
+                    <div
+                      className={cx(
+                        "fund-raising-three-top-circle",
+                        "second-circle"
+                      )}
+                    >
+                      B輪
+                    </div>
+                    <div
+                      className={cx(
+                        "fund-raising-three-top-circle",
+                        "third-circle"
+                      )}
+                    >
+                      C輪
+                    </div>
+                  </div>
+                  <div className={cx("fund-raising-three-wheel-content")}>
+                    金額：10M-1B <br />
+                    可能投資人： <br />
+                    創投基金
+                  </div>
+                  <div
+                    className={cx("fund-raising-three-wheel-bottom-content")}
+                  >
+                    產品有成熟模樣並有完整的盈利模式
+                    <br /> 開始複製商業模式
+                    <br /> 正在為上市做準備
+                  </div>
+                </div>
+              </div>
+              <div className={cx("fund-raise-btn-col")}>
+                {pageStep === 4 && (
+                  <PressToNext
+                    classname={cx("fund-raising-btn")}
+                    containerStyle={{
+                      flex: 1,
+                      justifyContent: "flex-end",
+                      marginBottom: 0,
+                      height: "47px",
+                      alignSelf: "flex-end",
+                    }}
+                    btnStyle={{ border: "1px solid #111", color: "#111" }}
+                    name={"next"}
+                    pressToNextPage={() => setPageStep(5)}
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* six */}
+        {pageStep > 4 && (
+          <div
+            className={cx(
+              "fund-raise-grey-col",
+              "last-col",
+              pageStep === 5 && "spin"
+            )}
+          >
+            <div className={cx("fund-raise-content")}>
+              <div className={cx("describe-col")}>
+                最後的公司將會面臨3個結果：
+                <br />
+                <br /> 1.公司上市
+                <br /> 2.公司出售
+                <br /> 3.維持私有
+              </div>
+            </div>
+            {pageStep === 5 && (
               <PressToNext
                 classname={cx("fund-raising-btn")}
                 containerStyle={{
-                  flex: 1,
                   justifyContent: "flex-end",
                   marginBottom: 0,
-                  height: "47px",
-                  alignSelf: "flex-end",
                 }}
                 btnStyle={{ border: "1px solid #111", color: "#111" }}
                 name={"next"}
               />
-            </div>
+            )}
           </div>
-        </div>
-        {/* six */}
-        <div className={cx("fund-raise-grey-col")}>
-          <div className={cx("fund-raise-content")}>
-            <div className={cx("describe-col")}>
-              最後的公司將會面臨3個結果：
-              <br />
-              <br /> 1.公司上市
-              <br /> 2.公司出售
-              <br /> 3.維持私有
-            </div>
-          </div>
-          <PressToNext
-            classname={cx("fund-raising-btn")}
-            containerStyle={{
-              justifyContent: "flex-end",
-              marginBottom: 0,
-            }}
-            btnStyle={{ border: "1px solid #111", color: "#111" }}
-            name={"next"}
-          />
-        </div>
+        )}
       </div>
       <Footer />
     </div>
